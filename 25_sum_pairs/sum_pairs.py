@@ -22,10 +22,28 @@ def sum_pairs(nums, goal):
         ()
     """
 
-    for num in list(range(len(nums))):
-        for re_num in nums[num:]:
-            if re_num + num == goal:
-                print(f"this {re_num} can probably fuck off it + {num} dont't = {goal} and aren't the first pairs")
+    nums.reverse()
+    pairs = []
+    print(nums)
+
+    # for num in list(range(0, len(nums) - 1)):
+    #     remainder = goal - int(new_nums[num])
+    #     if remainder in new_nums[num:]:
+    #         pairs.append((remainder, new_nums[num]))
+    
+    # return pairs[-1]
+
+    for num1 in nums:
+        num1, *rest = nums
+        for num2 in rest:
+            if num1 + num2 == goal:
+                pairs.append((num1, num2))
+    return pairs[0]
+
+    # for num in list(range(len(nums))):
+    #     for re_num in nums[num:]:
+    #         if re_num + num == goal:
+    #             print(f"this {re_num} can probably fuck off it + {num} dont't = {goal} and aren't the first pairs")
 
 
 

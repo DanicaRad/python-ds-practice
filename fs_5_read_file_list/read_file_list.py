@@ -23,3 +23,5 @@ def read_file_list(filename):
     file = open(filename, "r")
     for line in file:
         print(f"- {line.strip()}")
+    
+    file.close()
